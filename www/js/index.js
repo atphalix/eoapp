@@ -49,5 +49,7 @@ var app = {
 };
 
 function play(){
-	alert ("play audio function");
+	var bleep = new Audio();
+	bleep.src = "audio/jes1.ogg";
+	bleep.play();
 }
