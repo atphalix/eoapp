@@ -28,6 +28,7 @@
           <li><a href="#one" data-theme="a" data-ajax="false">one</a></li>
           <li><a href="#two" data-theme="a" data-ajax="false">two</a></li>
 			<li><a href="#three" data-theme="a" data-ajax="false">three</a></li>
+		<li><a href="#four" data-theme="a" data-ajax="false">four</a></li>
         </ul>
     </div>
  <!-- Lesson content START HERE!! -->
@@ -35,10 +36,10 @@
      <h3>Suffix -ino</h3>
 
 <!-- Audio button START HERE!! -->
- <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
+ <a href="#" onclick="viro();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
 <!-- END HERE!! -->
 Viro = man</br>
- <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
+ <a href="#" onclick="virino();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
 Virino = woman<p>
 
  <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
@@ -55,6 +56,18 @@ Patrino = mother<p>
 La bela amikino = the beautiful (female) friend</br>
  <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
 la bona patrino = the good mother<p>
+</div><!-- part 1 END HERE!! -->
+ <div id="two" class="ui-content">
+ <h3>accusative (-n)</h3>
+</div>
+<!-- part 2 END HERE!! -->
+ <div id="three" class="ui-content">
+ <h3>prefix -mal</h3>
+
+</div><!-- part 3 END HERE!! -->
+ <div id="four" class="ui-content">
+ <h3>vocabulary</h3>
+
 </div>
 </div>
 </div>
@@ -62,6 +75,16 @@ la bona patrino = the good mother<p>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+	function viro(){
+	var bleep = new Audio();
+	bleep.src = "audio/lec02/viro.ogg";
+	bleep.play();
+}
+function virino(){
+	var bleep = new Audio();
+	bleep.src = "audio/lec02/virino.ogg";
+	bleep.play();
+}
         </script>
     </body>
 </html>
