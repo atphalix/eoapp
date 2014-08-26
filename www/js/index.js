@@ -50,6 +50,6 @@ var app = {
 
 function play(){
 	var bleep = new Audio();
-	bleep.src = "audio/jes1.ogg";
+	bleep.src = "res/audio/jes1.ogg";
 	bleep.play();
 }
