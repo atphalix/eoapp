@@ -1,6 +1,6 @@
 #!/bin/sh
 #launch http server in current directory
-google-chrome www/index.html&
+google-chrome http://0.0.0.0:8080/&
 python -m SimpleHTTPServer 8080
 
 
