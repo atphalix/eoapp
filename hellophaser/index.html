@@ -15,16 +15,24 @@
 
         function preload () {
 
-            game.load.image('logo', 'phaser.png');
+    game.load.image('logo', 'phaser.png');
+     game.load.audio('sfx', 'trebone4.ogg');
 
         }
 
-        function create () {
+	var music;
+
+	function create () {
 
             var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
             logo.anchor.setTo(0.5, 0.5);
+	    music = game.add.audio('sfx');
+	    game.input.onDown.add(changeVolume, this);
 
         }
+	function changeVolume(pointer) {
+          music.play();
+}
 
     };
 
