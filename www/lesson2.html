@@ -1,90 +1,42 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
-	<script src="js/jquery-1.11.1.min.js"></script> 
-	<script src="js/jquery.mobile-1.4.3.min.js"></script>
+        <meta charset="UTF-8" />
+        <title>hello phaser!</title>
+        <script src="phaser.min.js"></script>
     </head>
     <body>
-      <div data-role="page" id="home">
- 
-  <div data-role="header">
-    <div data-role=header><h1>Leciono 2</h1>
-      <a data-rel="back" data-icon="back">Go back</a>
-      </div>
-  </div>
- <div data-role="content"> 
-<div data-role="tabs">
-    <div data-role="navbar">
-        <ul>
-          <li><a href="#one" data-theme="a" data-ajax="false">one</a></li>
-          <li><a href="#two" data-theme="a" data-ajax="false">two</a></li>
-			<li><a href="#three" data-theme="a" data-ajax="false">three</a></li>
-		<li><a href="#four" data-theme="a" data-ajax="false">four</a></li>
-        </ul>
-    </div>
- <!-- Lesson content START HERE!! -->
-<div id="one" class="ui-content">
-     <h3>Suffix -ino</h3>
 
-<!-- Audio button START HERE!! -->
- <a href="#" onclick="viro();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-<!-- END HERE!! -->
-Viro = man</br>
- <a href="#" onclick="virino();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-Virino = woman<p>
+    <script type="text/javascript">
 
- <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-Filo = son</br>
- <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-Filino = daughter<p>
+    window.onload = function() {
 
-<a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-Patro = father</br>
- <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-Patrino = mother<p>
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create });
 
-<a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-La bela amikino = the beautiful (female) friend</br>
- <a href="#" onclick="play();" class="ui-btn ui-icon-audio ui-btn-icon-left ui-btn-inline ui-btn-icon-notext ui-corner-all"></a>
-la bona patrino = the good mother<p>
-</div><!-- part 1 END HERE!! -->
- <div id="two" class="ui-content">
- <h3>accusative (-n)</h3>
-</div>
-<!-- part 2 END HERE!! -->
- <div id="three" class="ui-content">
- <h3>prefix -mal</h3>
+        function preload () {
 
-</div><!-- part 3 END HERE!! -->
- <div id="four" class="ui-content">
- <h3>vocabulary</h3>
+    game.load.image('logo', 'phaser.png');
+     game.load.audio('sfx', 'trebone4.ogg');
 
-</div>
-</div>
-</div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-	function viro(){
-	var bleep = new Audio();
-	bleep.src = "res/audio/lec02/viro.ogg";
-	bleep.play();
+        }
+
+	var music;
+
+	function create () {
+
+            var logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
+            logo.anchor.setTo(0.5, 0.5);
+	    music = game.add.audio('sfx');
+	    game.input.onDown.add(changeVolume, this);
+
+        }
+	function changeVolume(pointer) {
+          music.play();
 }
-function virino(){
-	var bleep = new Audio();
-	bleep.src = "res/audio/lec02/virino.ogg";
-	bleep.play();
-}
-        </script>
+
+    };
+
+    </script>
+
     </body>
 </html>
